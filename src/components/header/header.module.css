@@ -1,0 +1,58 @@
+:root {
+    --main-color: whitesmoke;
+    --icon-color: gray;
+}
+
+.header {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--main-color);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left > img{
+    object-fit: contain;
+    height: 80px;
+    margin-left: 5px;
+}
+
+.middle {
+    display: flex;
+    flex: 0.7;
+    align-items: center;
+    padding: 10px;
+
+    background-color: var(--main-color);
+    border-radius: 5px;
+}
+
+.middle > input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: medium;
+    background-color: transparent;
+}
+
+.middle .search,
+.middle .inputCaret {
+    color: var(--icon-color);
+}
+
+.right {
+    display: flex;
+    padding-right: 20px;
+}
+
+
+
+.inputCaret {
+
+}
