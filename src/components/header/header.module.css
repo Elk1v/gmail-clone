@@ -1,8 +1,3 @@
-:root {
-    --main-color: whitesmoke;
-    --icon-color: gray;
-}
-
 .header {
     color: black;
     display: flex;

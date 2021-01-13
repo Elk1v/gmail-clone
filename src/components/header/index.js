@@ -8,7 +8,8 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 
 import styles from './header.module.css';
-import { ALT, HIDDEN, URL, PL } from './consts';
+import { ALT, URL, PL } from './consts';
+import { HIDDEN } from '../../consts';
 
 export default function Header() {
   return (

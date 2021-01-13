@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    color: var(--icon-color);
+}
+.icon {
+    padding: 5px;
+}
+
+.selected > .number {
+    display: inline;
+    color: #c04b37;
+}
+
+.heading {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.number {
+    display: none;
+    font-weight: 800;
+}
+
+.wrapper:hover,
+.number:hover,
+.heading:hover,
+.selected,
+.selected > .number,
+.selected > .heading {
+    color: #c04b37;
+    background-color: #fcecec;
+    font-weight: 800 !important;
+}
+
+.wrapper:hover > .number {
+    display: inline;
+}

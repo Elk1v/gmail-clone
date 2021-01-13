@@ -1,3 +1,9 @@
+:root {
+    --main-color: whitesmoke;
+    --icon-color: gray;
+}
+
 .app {
     color: red;
 }
+

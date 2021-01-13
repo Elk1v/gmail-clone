@@ -12,10 +12,11 @@
     "node": true
   },
   "rules": {
-    //"no-unused-vars": ["off"],
+    "no-unused-vars": ["off"],
     "no-param-reassign": ["off"],
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": ["off"],
     "max-len": [
       "warn",
       {
