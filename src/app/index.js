@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styles from './app.module.css';
-import Header from '../components/header';
-import Sidebar from '../components/sidebar';
-import EmailList from '../components/email-list';
+import { Header, Sidebar, EmailList } from '../components';
 import Mail from '../components/email-list/mail';
 
 const PATH = {

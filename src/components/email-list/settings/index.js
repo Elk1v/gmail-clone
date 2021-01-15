@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ArrowDropDown,
-  CheckBox,
   ChevronLeft,
   ChevronRight,
   KeyboardHide,
@@ -9,7 +8,7 @@ import {
   Redo,
   Settings as SettingsIcon,
 } from '@material-ui/icons';
-import { IconButton } from '@material-ui/core';
+import { IconButton, Checkbox } from '@material-ui/core';
 import styles from '../emailList.module.css';
 import { ICON_COLOR } from '../../../consts';
 
@@ -17,7 +16,7 @@ const Settings = () => {
   return (
     <section className={styles.settings}>
       <section className={styles.left}>
-        <CheckBox className={ICON_COLOR} />
+        <Checkbox className={ICON_COLOR} />
         <IconButton children={<ArrowDropDown />} />
         <IconButton children={<Redo />} />
         <IconButton children={<MoreVert />} />
