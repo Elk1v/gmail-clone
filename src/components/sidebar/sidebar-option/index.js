@@ -3,7 +3,7 @@ import styles from './sidebarOption.module.css';
 
 function SidebarOption({ Icon, title, number, selected }) {
   const isSelected = selected
-    ? `${styles.selected} ${styles.wrapper}`
+    ? `${styles.wrapper} ${styles.selected}`
     : `${styles.wrapper}`;
 
   return (

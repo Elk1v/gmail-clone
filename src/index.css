@@ -16,6 +16,12 @@ code {
     monospace;
 }
 
+:root {
+  --main-color: whitesmoke;
+  --icon-color: gray;
+}
+
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -24,4 +30,12 @@ code {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.icon-color {
+  color: var(--icon-color);
 }

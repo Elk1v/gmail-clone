@@ -17,9 +17,7 @@ export default function Header() {
       <h2 className={HIDDEN}>Header</h2>
       <section className={styles.left}>
         <h3 className={HIDDEN}>Menu icon</h3>
-        <IconButton>
-          <MenuIcon />
-        </IconButton>
+        <IconButton children={<MenuIcon />} />
         <img src={URL.GMAIL_LOGO} alt={ALT.GMAIL_LOGO} />
       </section>
 
@@ -32,12 +30,8 @@ export default function Header() {
 
       <section className={styles.right}>
         <h3 className={HIDDEN}>User Menu</h3>
-        <IconButton>
-          <AppsIcon />
-        </IconButton>
-        <IconButton>
-          <NotificationsIcon />
-        </IconButton>
+        <IconButton children={<AppsIcon />} />
+        <IconButton children={<NotificationsIcon />} />
         <Avatar />
       </section>
     </header>

@@ -12,6 +12,7 @@
     "node": true
   },
   "rules": {
+    "react/no-children-prop": ["off"],
     "no-unused-vars": ["off"],
     "no-param-reassign": ["off"],
     "jsx-a11y/href-no-hash": ["off"],

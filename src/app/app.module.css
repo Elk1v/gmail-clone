@@ -1,9 +1,10 @@
-:root {
-    --main-color: whitesmoke;
-    --icon-color: gray;
+.wrapper {
+    height: 100vh;
+}
+.main {
+    display: flex;
+    height: 100vh;
 }
 
-.app {
-    color: red;
-}
+
 
