@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styles from './app.module.css';
-import { Header, Sidebar, EmailList } from '../components';
+import { Header, Sidebar, EmailList, Compose } from '../components';
 import Mail from '../components/email-list/mail';
 
 const PATH = {
@@ -23,6 +23,8 @@ function App() {
             <Route exact path={PATH.ROOT} component={EmailList} />
           </Switch>
         </main>
+
+        <Compose />
       </div>
     </Router>
   );
