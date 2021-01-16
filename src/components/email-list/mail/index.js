@@ -6,9 +6,12 @@ import {
   Delete,
   Email,
   Error,
+  ExitToApp,
   LabelImportant,
   MoreVert,
   MoveToInbox,
+  Print,
+  UnfoldMore,
   WatchLater,
 } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
@@ -28,8 +31,9 @@ const Mail = () => {
 
   return (
     <section className={styles.wrapper}>
+      <h4 className={HIDDEN}>MAIL</h4>
       <section className={styles.tools}>
-        <div className={styles.left}>
+        <div className={styles.toolsLeft}>
           <h5 className={HIDDEN}>left settings section</h5>
           <IconButton
             onClick={clickBackHandler}
@@ -46,11 +50,28 @@ const Mail = () => {
           <IconButton children={<MoreVert />} />
         </div>
 
-        <div className={styles.right}>
+        <div className={styles.toolsRight}>
           <h5 className={HIDDEN}>right settings section</h5>
+          <IconButton children={<UnfoldMore />} />
+          <IconButton children={<Print />} />
+          <IconButton children={<ExitToApp />} />
         </div>
       </section>
-      <h4 className={HIDDEN}>MAIL</h4>
+
+      <section className={styles.subject}>
+        <h5 className={HIDDEN}>Message body</h5>
+
+        <header className={styles.header}>
+          <h6>Subject</h6>
+          <LabelImportant className={styles.important} />
+          <p>title</p>
+          <p className={styles.time}>10pm</p>
+        </header>
+
+        <div className={styles.message}>
+          <p>message has jas ajk</p>
+        </div>
+      </section>
     </section>
   );
 };
