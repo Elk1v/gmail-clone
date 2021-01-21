@@ -21,11 +21,11 @@ import { HIDDEN } from '../../../consts';
 const Mail = () => {
   const history = useHistory();
 
-  const clickBackHandler = () => {
+  const handleBackClick = () => {
     history.push('/');
   };
 
-  const presBackHandler = (e) => {
+  const handleBackPress = (e) => {
     if (e.key === 'Enter') history.push('/');
   };
 
@@ -36,8 +36,8 @@ const Mail = () => {
         <div className={styles.toolsLeft}>
           <h5 className={HIDDEN}>left settings section</h5>
           <IconButton
-            onClick={clickBackHandler}
-            onKeyPress={presBackHandler}
+            onClick={handleBackClick}
+            onKeyPress={handleBackPress}
             children={<ArrowBack />}
           />
           <IconButton children={<MoveToInbox />} />

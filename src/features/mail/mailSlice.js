@@ -7,9 +7,9 @@ export const mailSlice = createSlice({
   },
   reducers: {
     openCompose: (state) => {
-      state.isExposeOpen = true;
+      state.isComposeOpen = true;
     },
-    closeExpose: (state) => {
+    closeCompose: (state) => {
       state.isComposeOpen = false;
     },
   },

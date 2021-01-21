@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styles from './app.module.css';
 import { Header, Sidebar, EmailList, Compose } from '../components';
 import Mail from '../components/email-list/mail';
+import { selectIsComposeOpen } from '../features/mail/mailSlice';
 
 const PATH = {
   ROOT: '/',
@@ -10,6 +12,8 @@ const PATH = {
 };
 
 function App() {
+  const isComposeOpen = useSelector(selectIsComposeOpen);
+
   return (
     <Router>
       <div className={styles.wrapper}>
@@ -24,7 +28,7 @@ function App() {
           </Switch>
         </main>
 
-        <Compose />
+        {isComposeOpen && <Compose />}
       </div>
     </Router>
   );

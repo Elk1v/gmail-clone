@@ -7,21 +7,22 @@ import styles from './emailRow.module.css';
 const EmailRow = ({ id, title, subject, description, time }) => {
   const history = useHistory();
 
-  const clickHandler = () => {
+  const handleCLick = () => {
     history.push('/mail');
   };
 
-  const pressKeyHandler = (e) => {
+  const handlePressKey = (e) => {
     if (e.key === 'Enter') history.push('/mail');
   };
 
   return (
     <section
       className={styles.wrapper}
-      onKeyPress={pressKeyHandler}
-      onClick={clickHandler}
+      onKeyPress={handleCLick}
+      onClick={handlePressKey}
       role="button"
       tabIndex="0"
+      key={id}
     >
       <div className={styles.options}>
         <Checkbox />

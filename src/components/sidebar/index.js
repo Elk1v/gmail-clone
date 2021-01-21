@@ -12,18 +12,27 @@ import PersonIcon from '@material-ui/icons/Person';
 import DuoIcon from '@material-ui/icons/Duo';
 import PhoneIcon from '@material-ui/icons/Phone';
 
+import { useDispatch } from 'react-redux';
 import SidebarOption from './sidebar-option';
 import styles from './sidebar.module.css';
 
 import { HIDDEN } from '../../consts';
+import { openCompose } from '../../features/mail/mailSlice';
 
 export default function Sidebar() {
+  const dispatch = useDispatch();
+
+  const handleComposeClick = () => {
+    dispatch(openCompose());
+  };
+
   return (
     <section className={styles.wrapper}>
       <h2 className={HIDDEN}>Sidebar</h2>
       <Button
         startIcon={<AddIcon fontSize="large" />}
         className={styles.compose}
+        onClick={handleComposeClick}
       >
         Compose
       </Button>

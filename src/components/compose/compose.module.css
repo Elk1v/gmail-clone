@@ -52,3 +52,9 @@
     flex: 1;
 }
 
+.error {
+    padding: 2px;
+    text-align: right;
+    color: red;
+    background-color: white;
+}
