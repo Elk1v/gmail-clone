@@ -1,25 +1,38 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { IconButton, Checkbox } from '@material-ui/core';
 import { LabelImportantOutlined, StarBorderOutlined } from '@material-ui/icons';
+import { selectMail } from '../../../features/mail/mailSlice';
 import styles from './emailRow.module.css';
 
-const EmailRow = ({ title, subject, description, time = 'now' }) => {
+const EmailRow = ({ id, title, subject, description, time = 'now' }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  const handleCLick = () => {
+  const handleOpenMail = () => {
+    dispatch(
+      selectMail({
+        id,
+        title,
+        subject,
+        description,
+        time,
+      })
+    );
+
     history.push('/mail');
   };
 
-  const handlePressKey = (e) => {
-    if (e.key === 'Enter') history.push('/mail');
+  const handlePressEnter = (e) => {
+    if (e.key === 'Enter') handleOpenMail();
   };
 
   return (
     <section
       className={styles.wrapper}
-      onKeyPress={handleCLick}
-      onClick={handlePressKey}
+      onKeyPress={handlePressEnter}
+      onClick={handleOpenMail}
       role="button"
       tabIndex="0"
     >

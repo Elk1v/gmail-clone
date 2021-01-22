@@ -15,19 +15,24 @@ import {
   WatchLater,
 } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styles from './mail.module.css';
+import { selectCurrentMail } from '../../../features/mail/mailSlice';
 import { HIDDEN } from '../../../consts';
 
 const Mail = () => {
   const history = useHistory();
 
-  const handleBackClick = () => {
+  const handleBack = () => {
     history.push('/');
   };
 
-  const handleBackPress = (e) => {
-    if (e.key === 'Enter') history.push('/');
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') handleBack();
   };
+
+  const selectedMail = useSelector(selectCurrentMail);
+  console.log(selectedMail);
 
   return (
     <section className={styles.wrapper}>
@@ -36,8 +41,8 @@ const Mail = () => {
         <div className={styles.toolsLeft}>
           <h5 className={HIDDEN}>left settings section</h5>
           <IconButton
-            onClick={handleBackClick}
-            onKeyPress={handleBackPress}
+            onClick={handleBack}
+            onKeyPress={handleEnterPress}
             children={<ArrowBack />}
           />
           <IconButton children={<MoveToInbox />} />
@@ -62,14 +67,14 @@ const Mail = () => {
         <h5 className={HIDDEN}>Message body</h5>
 
         <header className={styles.header}>
-          <h6>Subject</h6>
+          <h6>{selectedMail?.subject}</h6>
           <LabelImportant className={styles.important} />
-          <p>title</p>
-          <p className={styles.time}>10pm</p>
+          <p>{selectedMail?.title}</p>
+          <p className={styles.time}>{selectedMail?.time}</p>
         </header>
 
         <div className={styles.message}>
-          <p>message has jas ajk</p>
+          <p>{selectedMail?.description}</p>
         </div>
       </section>
     </section>

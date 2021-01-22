@@ -4,9 +4,12 @@ export const mailSlice = createSlice({
   name: 'mail',
   initialState: {
     isComposeOpen: false,
-    error: null,
+    currentMail: null,
   },
   reducers: {
+    selectMail: (state, action) => {
+      state.currentMail = action.payload;
+    },
     openCompose: (state) => {
       state.isComposeOpen = true;
     },
@@ -16,7 +19,8 @@ export const mailSlice = createSlice({
   },
 });
 
-export const { openCompose, closeCompose } = mailSlice.actions;
+export const { openCompose, closeCompose, selectMail } = mailSlice.actions;
 export const selectIsComposeOpen = (state) => state.mail.isComposeOpen;
+export const selectCurrentMail = (state) => state.mail.currentMail;
 
 export default mailSlice.reducer;

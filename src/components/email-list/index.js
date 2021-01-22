@@ -8,7 +8,7 @@ import { dataBase } from '../../firebase';
 
 let count = 0;
 
-const  EmailList = () => {
+const EmailList = () => {
   const [emails, setEmails] = React.useState([]);
   console.log(emails);
   console.log(`[Email list renders]: ${++count}`);
@@ -47,6 +47,6 @@ const  EmailList = () => {
       </section>
     </section>
   );
-}
+};
 
 export default EmailList;
