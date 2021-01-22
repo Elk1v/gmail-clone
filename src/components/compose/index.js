@@ -3,9 +3,11 @@ import { Button, IconButton } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import firebase from 'firebase';
 import styles from './compose.module.css';
 import { HIDDEN } from '../../consts';
 import { closeCompose } from '../../features/mail/mailSlice';
+import { dataBase } from '../../firebase';
 
 const Compose = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -16,6 +18,14 @@ const Compose = () => {
 
   const onSubmit = (data) => {
     console.table(data);
+    dataBase.collection('emails').add({
+      to: data.to,
+      subject: data.subject,
+      message: data.message,
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    dispatch(closeCompose());
   };
 
   const handleCloseClick = () => {
@@ -35,7 +45,7 @@ const Compose = () => {
           name="to"
           placeholder="To"
           className={toClassName}
-          type="text"
+          type="email"
           defaultValue=""
           ref={register({ required: true })}
         />

@@ -4,7 +4,7 @@ import { IconButton, Checkbox } from '@material-ui/core';
 import { LabelImportantOutlined, StarBorderOutlined } from '@material-ui/icons';
 import styles from './emailRow.module.css';
 
-const EmailRow = ({ id, title, subject, description, time }) => {
+const EmailRow = ({ title, subject, description, time = 'now' }) => {
   const history = useHistory();
 
   const handleCLick = () => {
@@ -22,7 +22,6 @@ const EmailRow = ({ id, title, subject, description, time }) => {
       onClick={handlePressKey}
       role="button"
       tabIndex="0"
-      key={id}
     >
       <div className={styles.options}>
         <Checkbox />
