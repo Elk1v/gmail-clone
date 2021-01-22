@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
 import styles from './emailList.module.css';
 import { HIDDEN } from '../../consts';
 import Sections from './sections';
@@ -7,18 +6,12 @@ import Settings from './settings';
 import EmailRow from './email-row';
 import { dataBase } from '../../firebase';
 
-// import { fetchEmails, selectEmails } from '../../features/mail/mailSlice';
+let count = 0;
 
-function EmailList() {
+const  EmailList = () => {
   const [emails, setEmails] = React.useState([]);
-  // const dispatch = useDispatch();
-  // const emails = useSelector(selectEmails);
-  // React.useEffect(() => {
-  //   dispatch(fetchEmails());
-  // }, [emails]);
-
   console.log(emails);
-
+  console.log(`[Email list renders]: ${++count}`);
   React.useEffect(() => {
     const unsubscribe = dataBase
       .collection('emails')
@@ -48,7 +41,7 @@ function EmailList() {
             title={to}
             subject={subject}
             description={message}
-            time={new Date(timeStamp?.seconds * 1000).toUTCString()}
+            time={new Date(timeStamp?.seconds * 1000).toUTCString()} // eslint-disable-line
           />
         ))}
       </section>

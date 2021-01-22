@@ -4,6 +4,8 @@
     "plugin:prettier/recommended",
     "prettier/react"
   ],
+
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "commonjs": true,
@@ -15,6 +17,7 @@
     "import/prefer-default-export": ["off"],
     "react/no-children-prop": ["off"],
     "no-unused-vars": ["off"],
+    "no-plusplus": ["off"],
     "no-param-reassign": ["off"],
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
