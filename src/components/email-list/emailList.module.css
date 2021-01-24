@@ -3,6 +3,10 @@
     overflow: scroll;
 }
 
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+
 .settings {
     position: sticky;
     z-index: 10;

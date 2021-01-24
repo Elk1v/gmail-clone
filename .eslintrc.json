@@ -14,6 +14,7 @@
     "node": true
   },
   "rules": {
+    "no-shadow": ["off"],
     "import/prefer-default-export": ["off"],
     "react/no-children-prop": ["off"],
     "no-unused-vars": ["off"],

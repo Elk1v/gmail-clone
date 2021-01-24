@@ -7,11 +7,22 @@ import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './header.module.css';
 import { ALT, URL, PL } from './consts';
 import { HIDDEN } from '../../consts';
+import { logout, selectUser } from '../../features/auth/authSlice';
+import { auth } from '../../firebase';
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const handleSignOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <header className={styles.header}>
       <h2 className={HIDDEN}>Header</h2>
@@ -32,7 +43,7 @@ export default function Header() {
         <h3 className={HIDDEN}>User Menu</h3>
         <IconButton children={<AppsIcon />} />
         <IconButton children={<NotificationsIcon />} />
-        <Avatar />
+        <Avatar src={user?.photoURL} onClick={handleSignOut} />
       </section>
     </header>
   );

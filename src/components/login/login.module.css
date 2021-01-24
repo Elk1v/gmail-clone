@@ -1,0 +1,17 @@
+.wrapper {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container > .logo {
+    object-fit: contain;
+    height: 200px;
+}
