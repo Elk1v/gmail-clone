@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './app.module.css';
 import { Header, Sidebar, Compose, Login } from '../components';
@@ -9,7 +9,6 @@ import { selectUser, login } from '../features/auth/authSlice';
 import { auth } from '../firebase';
 
 const EmailList = React.lazy(() => import('../components/email-list/'));
-let count = 0;
 const PATH = {
   ROOT: '/',
   MAIL: '/mail',
@@ -33,7 +32,6 @@ function App() {
       }
     });
   }, []);
-  console.log(`[App renders]: ${++count}`);
   return (
     <Router>
       {!user ? (
